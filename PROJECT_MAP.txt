@@ -1,0 +1,150 @@
+╔═══════════════════════════════════════════════════════════════════════╗
+║                   CONNECT LINK - PROJECT MAP                          ║
+║                   Professional Structure v2.0                         ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+📁 connect-link/
+│
+├── 📂 backend/                    🔧 BACKEND (Flask + Python)
+│   │
+│   ├── 📂 app/                    Main Flask Application
+│   │   ├── 📂 models/            Database Models (User, Link, Click...)
+│   │   ├── 📂 routes/            API Endpoints (auth, links, analytics...)
+│   │   ├── 📂 core/              Core Functionality (db, config)
+│   │   ├── 📂 crud/              CRUD Operations
+│   │   ├── 📂 schemas/           Data Validation Schemas
+│   │   └── 📂 tests/             Backend Tests
+│   │
+│   ├── 📂 instance/               Database Files (SQLite)
+│   │
+│   ├── 📄 run.py                 🚀 Development Server
+│   ├── 📄 wsgi.py                🌐 Production WSGI Entry
+│   ├── 📄 requirements.txt       📦 Python Dependencies
+│   ├── 📄 .env.production        ⚙️  Production Config
+│   ├── 📄 .htaccess              🔧 Apache Config
+│   │
+│   └── 📄 [8 utility scripts]    🛠️  Database & Testing Tools
+│
+├── 📂 frontend/                   💻 FRONTEND (React + TypeScript)
+│   │
+│   ├── 📂 src/                    Source Code
+│   │   ├── 📂 components/        React Components (UI, forms...)
+│   │   ├── 📂 pages/             Pages (Dashboard, Login...)
+│   │   ├── 📂 services/          API Client (axios)
+│   │   ├── 📂 context/           State Management (Auth)
+│   │   └── 📂 assets/            Images, Fonts
+│   │
+│   ├── 📂 public/                 Static Files (logos, favicon)
+│   │
+│   ├── 📄 package.json           📦 Node Dependencies
+│   ├── 📄 vite.config.ts         ⚙️  Build Configuration
+│   └── 📄 tailwind.config.js     🎨 Styling Config
+│
+├── 📂 docs/                       📚 DOCUMENTATION (14 files)
+│   │
+│   ├── 📄 PROJECT_STRUCTURE.md   Complete Structure Guide
+│   ├── 📄 FOLDER_ORGANIZATION.md Organization Details
+│   ├── 📄 ORGANIZATION_SUMMARY.md This Organization Summary
+│   ├── 📄 QUICK_START.md         Getting Started Guide
+│   ├── 📄 DEPLOYMENT.md          Deployment Instructions
+│   ├── 📄 READY_TO_DEPLOY.md     Deployment Checklist
+│   ├── 📄 FILEZILLA_GUIDE.md     FTP Upload Guide
+│   ├── 📄 FRONTEND_COMPLETE.md   Frontend Architecture
+│   ├── 📄 LOGO_GUIDE.md          Branding Guidelines
+│   └── 📄 [5 more guides]        Additional Documentation
+│
+├── 📂 scripts/                    🛠️  UTILITY SCRIPTS (3 files)
+│   ├── 📄 fix_slugs.bat          Fix URL Slugs
+│   ├── 📄 update_db.bat          Update Database
+│   └── 📄 test.html              Test File
+│
+├── 📄 README.md                   📖 Main Project README
+├── 📄 STRUCTURE.txt               📋 Quick Structure Reference
+├── 📄 PROJECT_MAP.txt             🗺️  This File
+└── 📄 .gitignore                  🚫 Git Ignore Rules
+
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 QUICK START COMMANDS:
+
+Backend Development:
+  cd backend
+  python run.py
+  → http://localhost:5000
+
+Frontend Development:
+  cd frontend
+  npm run dev
+  → http://localhost:5173
+
+View Documentation:
+  cd docs
+  → Open any .md file
+
+═══════════════════════════════════════════════════════════════════════
+
+📊 PROJECT STATISTICS:
+
+Total Folders:        4 main sections
+Backend Items:        78 files/folders
+Frontend Items:       36 files/folders
+Documentation:        14 guide files
+Utility Scripts:      3 files
+Root Files:           4 files
+
+Total Organization:   Clean & Professional ✅
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 KEY FEATURES:
+
+✓ Complete separation of backend and frontend
+✓ All documentation centralized in docs/
+✓ No duplicate files
+✓ Clean root directory
+✓ Professional structure
+✓ Production ready
+✓ Git ready (.gitignore configured)
+✓ Well documented (14 guides)
+✓ Easy to navigate
+✓ Scalable architecture
+
+═══════════════════════════════════════════════════════════════════════
+
+📍 QUICK REFERENCE:
+
+Need to find...              Look in...
+─────────────────────────────────────────────────────────────────────
+API endpoints                backend/app/routes/
+Database models              backend/app/models/
+Backend configuration        backend/.env.production
+Start backend server         backend/run.py
+React components             frontend/src/components/
+Page components              frontend/src/pages/
+API client                   frontend/src/services/api.ts
+Frontend configuration       frontend/.env.production
+Logos and images             frontend/public/
+Documentation                docs/
+Deployment guide             docs/DEPLOYMENT.md
+Quick start guide            docs/QUICK_START.md
+Structure details            docs/PROJECT_STRUCTURE.md
+Utility scripts              scripts/
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 TIPS:
+
+• Use your IDE's file search (Ctrl+P) to find files quickly
+• Read docs/QUICK_START.md to get started
+• Backend and frontend run independently
+• All environment files are gitignored for security
+• Database files are gitignored (instance/)
+
+═══════════════════════════════════════════════════════════════════════
+
+Created: December 10, 2025
+Version: 2.0 - Professional Organization
+By: Cascade AI
+
+╚═══════════════════════════════════════════════════════════════════════╝

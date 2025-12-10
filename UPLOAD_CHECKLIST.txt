@@ -1,0 +1,140 @@
+╔═══════════════════════════════════════════════════════════════════════╗
+║          COMPLETE UPLOAD CHECKLIST - Connect Link                    ║
+║                  Backend + Frontend                                   ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+🔐 STEP 1: CONNECT TO FILEZILLA
+─────────────────────────────────────────────────────────────────────────
+[ ] Open FileZilla
+[ ] Click "Site Manager"
+[ ] Enter connection details:
+    Host: conlk.zen-apps.com
+    User: conlkaccountftp
+    Pass: 1xbz22B0?
+    Port: 21
+[ ] Click "Connect"
+[ ] Connection successful (files visible on right)
+
+
+📦 STEP 2: UPLOAD BACKEND FILES
+─────────────────────────────────────────────────────────────────────────
+Local:  C:\Users\HP\Desktop\connect link\backend\
+Server: /conlk.zen-apps.com/
+
+Upload these folders:
+[ ] app/                         (drag from left to right)
+[ ] instance/                    (optional - skip if using MariaDB)
+
+Upload these files:
+[ ] wsgi.py                      (drag from left to right)
+[ ] .htaccess                    (drag from left to right)
+[ ] requirements.production.txt  (drag, then rename to requirements.txt)
+[ ] init_database.py             (drag from left to right)
+[ ] setup_server.sh              (optional)
+
+Create on server:
+[ ] .env file (right-click → Create new file → name it .env)
+[ ] Edit .env and paste environment variables
+[ ] Save .env file
+
+
+🎨 STEP 3: UPLOAD FRONTEND FILES
+─────────────────────────────────────────────────────────────────────────
+[ ] On server (right), create folder: public_html
+[ ] Double-click to enter public_html/
+[ ] On local (left), navigate to: frontend\dist\
+[ ] Select ALL files in dist/ (Ctrl+A)
+[ ] Drag ALL files to public_html/
+
+Files uploaded:
+[ ] index.html
+[ ] assets/ folder
+[ ] favicon.svg
+[ ] logo-no-bg.svg
+[ ] logo.svg
+[ ] background.jpg
+
+
+🔍 STEP 4: VERIFY STRUCTURE
+─────────────────────────────────────────────────────────────────────────
+Server should have:
+[ ] /conlk.zen-apps.com/app/
+[ ] /conlk.zen-apps.com/public_html/index.html
+[ ] /conlk.zen-apps.com/public_html/assets/
+[ ] /conlk.zen-apps.com/wsgi.py
+[ ] /conlk.zen-apps.com/.htaccess
+[ ] /conlk.zen-apps.com/.env
+[ ] /conlk.zen-apps.com/requirements.txt
+
+
+🔐 STEP 5: SET PERMISSIONS
+─────────────────────────────────────────────────────────────────────────
+Folders (755):
+[ ] app/ → Right-click → Permissions → 755
+[ ] public_html/ → Right-click → Permissions → 755
+
+Python files (755):
+[ ] wsgi.py → Right-click → Permissions → 755
+[ ] init_database.py → Right-click → Permissions → 755
+
+Config files (644):
+[ ] .env → Right-click → Permissions → 644
+[ ] .htaccess → Right-click → Permissions → 644
+
+
+🚀 STEP 6: SERVER SETUP (SSH or cPanel Terminal)
+─────────────────────────────────────────────────────────────────────────
+[ ] Connect to server terminal (SSH or cPanel)
+[ ] Navigate: cd /conlk.zen-apps.com
+[ ] Install dependencies: pip install -r requirements.txt
+[ ] Initialize database: python init_database.py
+[ ] Restart web server (cPanel or touch tmp/restart.txt)
+
+
+🌐 STEP 7: CONFIGURE PYTHON APP (cPanel)
+─────────────────────────────────────────────────────────────────────────
+[ ] Go to cPanel → "Setup Python App"
+[ ] Click "Create Application"
+[ ] Set Python version: 3.9+
+[ ] Set Application root: /home/conlkaccountftp/conlk.zen-apps.com
+[ ] Set Startup file: wsgi.py
+[ ] Set Entry point: app
+[ ] Click "Create"
+
+
+✅ STEP 8: TEST APPLICATION
+─────────────────────────────────────────────────────────────────────────
+[ ] Visit: https://conlk.zen-apps.com/api (should show JSON)
+[ ] Visit: https://conlk.zen-apps.com (should show login page)
+[ ] Try registering a test account
+[ ] Try logging in
+[ ] Try creating a short link
+
+
+═══════════════════════════════════════════════════════════════════════
+
+📊 PROGRESS TRACKER
+─────────────────────────────────────────────────────────────────────────
+Backend Upload:    [ ] Not Started  [ ] In Progress  [ ] Complete
+Frontend Upload:   [ ] Not Started  [ ] In Progress  [ ] Complete
+Configuration:     [ ] Not Started  [ ] In Progress  [ ] Complete
+Server Setup:      [ ] Not Started  [ ] In Progress  [ ] Complete
+Testing:           [ ] Not Started  [ ] In Progress  [ ] Complete
+
+
+⏱️ ESTIMATED TIME
+─────────────────────────────────────────────────────────────────────────
+Backend upload:     5-10 minutes
+Frontend upload:    2-3 minutes
+Configuration:      5 minutes
+Server setup:       5-10 minutes
+TOTAL:             ~15-20 minutes
+
+
+🎉 DEPLOYMENT COMPLETE!
+─────────────────────────────────────────────────────────────────────────
+Frontend: https://conlk.zen-apps.com
+Backend:  https://conlk.zen-apps.com/api
+Database: MariaDB (conlkdb)
+
+═══════════════════════════════════════════════════════════════════════

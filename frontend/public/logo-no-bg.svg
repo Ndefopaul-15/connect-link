@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Infinity Symbol - White to Cyan Gradient -->
+  <path
+    d="M 160 195 C 160 175, 175 165, 190 165 C 205 165, 220 175, 235 190 C 250 205, 265 215, 280 215 C 295 215, 310 205, 325 190 C 340 175, 355 165, 370 165 C 385 165, 400 175, 400 195 C 400 215, 385 225, 370 225 C 355 225, 340 215, 325 200 C 310 185, 295 175, 280 175 C 265 175, 250 185, 235 200 C 220 215, 205 225, 190 225 C 175 225, 160 215, 160 195 Z"
+    fill="url(#topGradient)"
+  />
+  
+  <!-- Bottom Infinity Symbol - Cyan to Green Gradient -->
+  <path
+    d="M 160 365 C 160 345, 175 335, 190 335 C 205 335, 220 345, 235 360 C 250 375, 265 385, 280 385 C 295 385, 310 375, 325 360 C 340 345, 355 335, 370 335 C 385 335, 400 345, 400 365 C 400 385, 385 395, 370 395 C 355 395, 340 385, 325 370 C 310 355, 295 345, 280 345 C 265 345, 250 355, 235 370 C 220 385, 205 395, 190 395 C 175 395, 160 385, 160 365 Z"
+    fill="url(#bottomGradient)"
+  />
+  
+  <!-- Text - connectlink -->
+  <text
+    x="250"
+    y="290"
+    font-family="'Segoe UI', 'Roboto', 'Arial', sans-serif"
+    font-size="56"
+    font-weight="700"
+    fill="#3B2F6B"
+    text-anchor="middle"
+    letter-spacing="-1"
+  >
+    connectlink
+  </text>
+  
+  <defs>
+    <!-- Top Infinity Gradient - White to Cyan -->
+    <linearGradient id="topGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#A0E7E5" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00D4D4" stop-opacity="1"/>
+    </linearGradient>
+    
+    <!-- Bottom Infinity Gradient - Cyan to Green -->
+    <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00B4D8" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#00D98E" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00FF88" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+</svg>

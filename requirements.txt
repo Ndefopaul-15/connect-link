@@ -1,0 +1,37 @@
+# Production Requirements for Connect Link Application
+# Python 3.9+
+
+# Flask Framework
+Flask==3.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-Migrate==4.0.5
+Flask-CORS==4.0.0
+Flask-JWT-Extended==4.6.0
+
+# Database Drivers
+SQLAlchemy==2.0.23
+PyMySQL==1.1.0
+cryptography==41.0.7
+
+# Validation & Security
+validators==0.22.0
+python-dotenv==1.0.0
+Werkzeug==3.0.1
+
+# URL Shortening
+shortuuid==1.0.11
+
+# WSGI Server for Production
+gunicorn==21.2.0
+
+# Optional but recommended
+python-dateutil==2.8.2
+
+# PostgreSQL support for Render.com (optional)
+psycopg2-binary==2.9.9
+
+# Additional dependencies
+Flask-Bcrypt==1.0.1
+qrcode==7.4.2
+Pillow==10.1.0
+dnspython==2.4.2

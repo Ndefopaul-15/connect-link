@@ -1,0 +1,91 @@
+CONNECT LINK - ORGANIZED PROJECT STRUCTURE
+==========================================
+
+📁 Root Directory Structure:
+----------------------------
+
+connect-link/
+│
+├── 📂 backend/              ← BACKEND (Flask + Python)
+│   ├── app/                # Flask application
+│   │   ├── models/        # Database models
+│   │   ├── routes/        # API endpoints
+│   │   ├── core/          # Core functionality
+│   │   ├── crud/          # CRUD operations
+│   │   ├── schemas/       # Data schemas
+│   │   └── tests/         # Tests
+│   ├── instance/          # Database files
+│   ├── run.py             # Dev server
+│   ├── wsgi.py            # Production server
+│   ├── requirements.txt   # Dependencies
+│   └── README.md          # Backend docs
+│
+├── 📂 frontend/             ← FRONTEND (React + TypeScript)
+│   ├── src/               # Source code
+│   │   ├── components/   # React components
+│   │   ├── pages/        # Page components
+│   │   ├── services/     # API client
+│   │   ├── context/      # State management
+│   │   └── assets/       # Images, fonts
+│   ├── public/           # Static files
+│   ├── package.json      # Dependencies
+│   └── vite.config.ts    # Build config
+│
+├── 📂 docs/                 ← DOCUMENTATION
+│   ├── PROJECT_STRUCTURE.md
+│   ├── FOLDER_ORGANIZATION.md
+│   ├── QUICK_START.md
+│   ├── DEPLOYMENT.md
+│   └── [other guides]
+│
+├── 📂 scripts/              ← UTILITY SCRIPTS
+│   ├── fix_slugs.bat
+│   ├── update_db.bat
+│   └── test.html
+│
+├── .gitignore              # Git ignore rules
+└── README.md               # Main project README
+
+
+🎯 QUICK ACCESS:
+----------------
+
+Backend Server:
+  cd backend
+  python run.py
+  → http://localhost:5000
+
+Frontend App:
+  cd frontend
+  npm run dev
+  → http://localhost:5173
+
+Documentation:
+  cd docs
+  → Read any .md file
+
+
+✅ BENEFITS:
+------------
+
+✓ Clean separation of concerns
+✓ Easy to navigate
+✓ Professional structure
+✓ Scalable architecture
+✓ Well documented
+✓ Production ready
+✓ Team friendly
+
+
+📝 NOTES:
+---------
+
+• Backend and Frontend are completely independent
+• All documentation is in /docs folder
+• No duplicate files in root
+• Environment files are gitignored
+• Database files are gitignored
+• Ready for version control (Git)
+
+
+Last Updated: December 10, 2025

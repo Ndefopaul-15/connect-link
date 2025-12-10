@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Purple Background - Rounded corners for favicon -->
+  <rect width="100" height="100" fill="#3d2f6b" rx="15"/>
+  
+  <!-- Top Infinity Symbol - White to Cyan Gradient -->
+  <path
+    d="M 25 35 
+       C 25 30, 28 27, 32 27 
+       C 36 27, 40 30, 44 34 
+       C 48 38, 52 41, 56 41 
+       C 60 41, 64 38, 68 34 
+       C 72 30, 76 27, 80 27 
+       C 84 27, 87 30, 87 35 
+       C 87 40, 84 43, 80 43 
+       C 76 43, 72 40, 68 36 
+       C 64 32, 60 29, 56 29 
+       C 52 29, 48 32, 44 36 
+       C 40 40, 36 43, 32 43 
+       C 28 43, 25 40, 25 35 Z"
+    fill="url(#topFaviconGrad)"
+  />
+  
+  <!-- Bottom Infinity Symbol - Cyan to Green Gradient -->
+  <path
+    d="M 25 65 
+       C 25 60, 28 57, 32 57 
+       C 36 57, 40 60, 44 64 
+       C 48 68, 52 71, 56 71 
+       C 60 71, 64 68, 68 64 
+       C 72 60, 76 57, 80 57 
+       C 84 57, 87 60, 87 65 
+       C 87 70, 84 73, 80 73 
+       C 76 73, 72 70, 68 66 
+       C 64 62, 60 59, 56 59 
+       C 52 59, 48 62, 44 66 
+       C 40 70, 36 73, 32 73 
+       C 28 73, 25 70, 25 65 Z"
+    fill="url(#bottomFaviconGrad)"
+  />
+  
+  <defs>
+    <linearGradient id="topFaviconGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#7dd3c0"/>
+      <stop offset="100%" stop-color="#00d4d4"/>
+    </linearGradient>
+    <linearGradient id="bottomFaviconGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00a8e8"/>
+      <stop offset="50%" stop-color="#00d98e"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+  </defs>
+</svg>
