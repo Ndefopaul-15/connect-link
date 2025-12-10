@@ -1,5 +1,5 @@
 # Production Requirements for Connect Link Application
-# Python 3.9+
+# Python 3.11+
 
 # Flask Framework
 Flask==3.0.0
@@ -11,7 +11,7 @@ Flask-JWT-Extended==4.6.0
 # Database Drivers
 SQLAlchemy==2.0.23
 PyMySQL==1.1.0
-cryptography==41.0.7
+cryptography==42.0.0
 
 # Validation & Security
 validators==0.22.0
@@ -30,5 +30,5 @@ psycopg2-binary==2.9.9
 # Additional dependencies
 Flask-Bcrypt==1.0.1
 qrcode==7.4.2
-Pillow==10.1.0
+Pillow==10.4.0
 dnspython==2.4.2
