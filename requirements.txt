@@ -24,9 +24,6 @@ shortuuid==1.0.11
 # WSGI Server for Production
 gunicorn==21.2.0
 
-# Optional but recommended
-python-dateutil==2.8.2
-
 # PostgreSQL support for Render.com (optional)
 psycopg2-binary==2.9.9
 
