@@ -9,7 +9,7 @@ Flask-CORS==4.0.0
 Flask-JWT-Extended==4.6.0
 
 # Database Drivers
-SQLAlchemy==2.0.23
+SQLAlchemy==2.0.36
 PyMySQL==1.1.0
 cryptography==42.0.0
 
