@@ -42,9 +42,13 @@ class Link(db.Model):
         """Return the full short URL with domain if available"""
         if self.domain:
             return f"https://{self.domain.domain_name}/{self.short_url_slug}"
-        # Default domain can be configured in config
+        # Default domain - use Render URL
         from flask import current_app
-        return f"{current_app.config.get('DEFAULT_DOMAIN', '')}/{self.short_url_slug}"
+        default_domain = current_app.config.get('DEFAULT_DOMAIN', 'https://connect-link.onrender.com')
+        # Ensure no double slash
+        if default_domain.endswith('/'):
+            default_domain = default_domain[:-1]
+        return f"{default_domain}/{self.short_url_slug}"
     
     def is_expired(self):
         """Check if the link has expired"""
