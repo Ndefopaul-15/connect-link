@@ -51,8 +51,6 @@ def init_database():
             create_test_user = input("\n❓ Créer un utilisateur admin de test? (y/n): ").lower()
             
             if create_test_user == 'y':
-                from werkzeug.security import generate_password_hash
-                
                 email = input("Email: ")
                 password = input("Mot de passe: ")
                 
@@ -61,9 +59,10 @@ def init_database():
                 if existing_user:
                     print("⚠️  Cet utilisateur existe déjà!")
                 else:
+                    # User model handles password hashing internally
                     user = User(
                         email=email,
-                        password_hash=generate_password_hash(password)
+                        password=password
                     )
                     db.session.add(user)
                     db.session.commit()

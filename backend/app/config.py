@@ -19,9 +19,11 @@ class TestingConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
 
 class ProductionConfig(Config):
-    # In a real application, you would configure production settings here
-    # e.g., use a different database, disable debug, etc.
-    pass
+    DEBUG = False
+    # Production settings
+    SESSION_COOKIE_SECURE = True
+    SESSION_COOKIE_HTTPONLY = True
+    SESSION_COOKIE_SAMESITE = 'Lax'
 
 config = {
     'development': DevelopmentConfig,

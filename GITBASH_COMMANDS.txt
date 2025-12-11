@@ -1,0 +1,87 @@
+╔══════════════════════════════════════════════════════════════╗
+║           🚀 GIT BASH DEPLOYMENT COMMANDS                    ║
+╚══════════════════════════════════════════════════════════════╝
+
+📋 COPY AND PASTE THESE COMMANDS IN GIT BASH
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Navigate to Project
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+cd "/c/Users/HP/Desktop/connect link"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 2: Upload Backend Files
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Upload app folder
+scp -r backend/app conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/
+
+# Upload wsgi.py
+scp backend/wsgi.py conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/
+
+# Upload .htaccess
+scp backend/.htaccess conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/
+
+# Upload .env (renamed from .env.production)
+scp backend/.env.production conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/.env
+
+# Upload requirements.txt (renamed)
+scp backend/requirements.production.txt conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/requirements.txt
+
+# Upload init_database.py
+scp backend/init_database.py conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 3: Upload Frontend Files
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+scp -r frontend/dist/* conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 4: SSH into Server and Configure
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ssh conlkaccountftp@conlk.zen-apps.com
+
+# Once connected, run these:
+cd /conlk.zen-apps.com
+python3 -m pip install -r requirements.txt --user
+python3 init_database.py
+chmod 755 wsgi.py
+chmod 644 .htaccess
+chmod 600 .env
+exit
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 ONE-LINER (All in One Command)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+cd "/c/Users/HP/Desktop/connect link" && scp -r backend/app backend/wsgi.py backend/.htaccess backend/init_database.py conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/ && scp backend/.env.production conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/.env && scp backend/requirements.production.txt conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/requirements.txt && scp -r frontend/dist/* conlkaccountftp@conlk.zen-apps.com:/conlk.zen-apps.com/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 NOTES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Password: 1xbz22B0?
+
+When prompted for password, paste: 1xbz22B0?
+
+You'll be asked for password multiple times (once per file/folder upload)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ AFTER DEPLOYMENT:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Visit: https://conlk.zen-apps.com
+
+You should see your Connect Link application running!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

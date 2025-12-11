@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: connect-link-api
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        value: 8792d9be31379225d922cd94e8b881efb1f77a3f59cba89e624b9a0f73048965
+      - key: JWT_SECRET_KEY
+        value: 85aac9cb3a0a7723ed665120d687e745b628ef579f120e1b2df971c5f0eddec3
+      - key: DEFAULT_DOMAIN
+        value: https://conlk.zen-apps.com
+      - key: FRONTEND_URL
+        value: https://conlk.zen-apps.com
+      - key: DATABASE_URL
+        fromDatabase:
+          name: connect-link-db
+          property: connectionString
+
+databases:
+  - name: connect-link-db
+    databaseName: conlkdb
+    user: conlkdbuser
+    plan: free

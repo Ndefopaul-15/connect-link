@@ -207,59 +207,6 @@ def delete_link(slug):
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
 
-@api.route('/<string:slug>', methods=['GET'])
-def redirect_link(slug):
-    """Redirect to the original URL"""
-    # Find the link
-    link = Link.query.filter_by(short_url_slug=slug).first()
-    
-    if not link or link.is_expired():
-        return jsonify({"error": "Link not found or expired"}), 404
-    
-    # Determine redirect URL
-    redirect_url = link.long_url
-    
-    # For dynamic links, check targeting rules
-    if link.is_dynamic and link.targeting_rules:
-        # Sort by priority (ascending, so lower numbers come first)
-        rules = sorted(link.targeting_rules, key=lambda x: x.priority)
-        # In a real app, you'd evaluate each rule's conditions
-        # For now, we'll just take the first one as an example
-        rule = rules[0] if rules else None
-        if rule:
-            redirect_url = rule.redirect_url
-    
-    # Record the click (in a real app, you'd do this asynchronously)
-    try:
-        click = Click(
-            link_id=link.link_id,
-            hashed_ip=hash(request.remote_addr) if request.remote_addr else None,
-            browser=request.user_agent.browser,
-            os=request.user_agent.platform,
-            referrer=request.referrer
-        )
-        
-        # Update daily stats (in a real app, you'd do this with a background task)
-        today = datetime.utcnow().date()
-        stats = LinkDailyStats.query.filter_by(
-            link_id=link.link_id,
-            date=today
-        ).first()
-        
-        if not stats:
-            stats = LinkDailyStats(link_id=link.link_id, date=today)
-            db.session.add(stats)
-        
-        stats.total_clicks = (stats.total_clicks or 0) + 1
-        # For unique clicks, you'd need to track unique visitors (by IP, user agent, etc.)
-        # This is a simplified version
-        stats.unique_clicks = (stats.unique_clicks or 0) + 1
-        
-        db.session.add(click)
-        db.session.commit()
-    except Exception as e:
-        # Don't fail the redirect if analytics fails
-        db.session.rollback()
-        current_app.logger.error(f"Error recording click: {str(e)}")
-    
-    return redirect(redirect_url)
+# NOTE: Redirect route is handled at root level in app/__init__.py
+# This ensures cleaner URLs for QR codes (e.g., conlk.zen-apps.com/abc123)
+# The root-level route at /<slug> takes precedence over API routes

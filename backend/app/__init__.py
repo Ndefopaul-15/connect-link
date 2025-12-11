@@ -28,8 +28,15 @@ def create_app(config_name='default'):
     bcrypt.init_app(app)
     
     # Configure CORS to allow frontend access
+    allowed_origins = [
+        "http://localhost:5173",  # Local development
+        "http://127.0.0.1:5173",  # Local development alternative
+        "https://conlk.zen-apps.com",  # Production frontend
+        "https://connect-link.onrender.com",  # Production backend (for testing)
+    ]
+    
     CORS(app, 
-         resources={r"/*": {"origins": "*"}},
+         resources={r"/*": {"origins": allowed_origins}},
          supports_credentials=True,
          allow_headers=["Content-Type", "Authorization"],
          methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"]
@@ -149,12 +156,13 @@ def create_app(config_name='default'):
         # Get any link from database
         link = Link.query.first()
         if link:
+            default_domain = app.config.get('DEFAULT_DOMAIN', 'https://conlk.zen-apps.com')
             return jsonify({
                 "test": "URL generation test",
                 "slug": link.short_url_slug,
                 "generated_url": link.get_short_url(),
                 "method_used": "get_short_url()",
-                "expected": f"https://connect-link.onrender.com/{link.short_url_slug}"
+                "expected": f"{default_domain}/{link.short_url_slug}"
             })
         return jsonify({"error": "No links in database"}), 404
     

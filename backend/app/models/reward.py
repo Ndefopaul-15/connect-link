@@ -6,7 +6,7 @@ class Reward(db.Model):
     reward_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text)
-    points_cost = db.Column(db.Integer, unique=True, nullable=False)
+    points_cost = db.Column(db.Integer, nullable=False)
     
     # Relationships
     point_transactions = db.relationship('PointsLedger', back_populates='reward')
