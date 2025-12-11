@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Purple Background - Exact from your image -->
+  <rect width="500" height="500" fill="#3d2f6b"/>
+  
+  <!-- Top Infinity Symbol - White to Cyan Gradient -->
+  <path
+    d="M 150 190 
+       C 150 175, 160 165, 175 165 
+       C 190 165, 205 175, 220 190 
+       C 235 205, 250 215, 265 215 
+       C 280 215, 295 205, 310 190 
+       C 325 175, 340 165, 355 165 
+       C 370 165, 380 175, 380 190 
+       C 380 205, 370 215, 355 215 
+       C 340 215, 325 205, 310 190 
+       C 295 175, 280 165, 265 165 
+       C 250 165, 235 175, 220 190 
+       C 205 205, 190 215, 175 215 
+       C 160 215, 150 205, 150 190 Z"
+    fill="url(#topInfinityGradient)"
+  />
+  
+  <!-- Bottom Infinity Symbol - Cyan to Green Gradient -->
+  <path
+    d="M 150 360 
+       C 150 345, 160 335, 175 335 
+       C 190 335, 205 345, 220 360 
+       C 235 375, 250 385, 265 385 
+       C 280 385, 295 375, 310 360 
+       C 325 345, 340 335, 355 335 
+       C 370 335, 380 345, 380 360 
+       C 380 375, 370 385, 355 385 
+       C 340 385, 325 375, 310 360 
+       C 295 345, 280 335, 265 335 
+       C 250 335, 235 345, 220 360 
+       C 205 375, 190 385, 175 385 
+       C 160 385, 150 375, 150 360 Z"
+    fill="url(#bottomInfinityGradient)"
+  />
+  
+  <!-- Text - connectlink -->
+  <text
+    x="250"
+    y="285"
+    font-family="Arial, sans-serif"
+    font-size="52"
+    font-weight="bold"
+    fill="white"
+    text-anchor="middle"
+  >
+    connectlink
+  </text>
+  
+  <defs>
+    <!-- Top Infinity Gradient - White to Cyan -->
+    <linearGradient id="topInfinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#7dd3c0"/>
+      <stop offset="100%" stop-color="#00d4d4"/>
+    </linearGradient>
+    
+    <!-- Bottom Infinity Gradient - Cyan to Green -->
+    <linearGradient id="bottomInfinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00a8e8"/>
+      <stop offset="50%" stop-color="#00d98e"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+  </defs>
+</svg>

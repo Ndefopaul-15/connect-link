@@ -34,7 +34,7 @@ const Dashboard: React.FC = () => {
   const [error, setError] = useState('');
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
   const [showQRModal, setShowQRModal] = useState(false);
-  const [selectedLinkForQR, setSelectedLinkForQR] = useState<string | null>(null);
+  const [selectedLinkForQR, setSelectedLinkForQR] = useState<LinkData | null>(null);
 
   useEffect(() => {
     loadLinks();
@@ -178,8 +178,8 @@ const Dashboard: React.FC = () => {
     }, 500);
   };
 
-  const handleGenerateQR = (slug: string) => {
-    setSelectedLinkForQR(slug);
+  const handleGenerateQR = (link: LinkData) => {
+    setSelectedLinkForQR(link);
     setShowQRModal(true);
   };
 
@@ -356,7 +356,7 @@ const Dashboard: React.FC = () => {
                             <BarChart3 className="h-5 w-5" />
                           </Link>
                           <button
-                            onClick={() => handleGenerateQR(link.short_url_slug)}
+                            onClick={() => handleGenerateQR(link)}
                             className="text-green-600 hover:text-green-900 scale-hover transition-all"
                             title="Generate QR Code"
                           >
@@ -533,7 +533,7 @@ const Dashboard: React.FC = () => {
       {/* QR Code Designer Modal */}
       {showQRModal && selectedLinkForQR && (
         <QRCodeDesigner
-          url={`http://127.0.0.1:5000/${selectedLinkForQR}`}
+          url={selectedLinkForQR.short_url}
           onClose={() => {
             setShowQRModal(false);
             setSelectedLinkForQR(null);

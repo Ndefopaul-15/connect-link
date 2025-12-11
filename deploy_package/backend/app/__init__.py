@@ -48,8 +48,7 @@ def create_app(config_name='default'):
                 "version": "1.0.0",
                 "description": "A powerful URL shortening and link management API with advanced features",
                 "status": "running",
-                "documentation": "https://github.com/your-repo/connect-link-api",
-                "default_domain": app.config.get('DEFAULT_DOMAIN', 'NOT SET')
+                "documentation": "https://github.com/your-repo/connect-link-api"
             },
             "endpoints": {
                 "authentication": {
