@@ -5,6 +5,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///./app.db'
     JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY') or 'super_secret_jwt_key'
+    DEFAULT_DOMAIN = os.environ.get('DEFAULT_DOMAIN') or 'https://connect-link.onrender.com'
     
     @staticmethod
     def init_app(app):
