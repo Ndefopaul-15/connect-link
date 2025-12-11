@@ -141,6 +141,23 @@ def create_app(config_name='default'):
             }
         })
     
+    # Debug endpoint to test URL generation
+    @app.route('/test-url-generation')
+    def test_url_generation():
+        """Test endpoint to verify URL generation"""
+        from .models import Link
+        # Get any link from database
+        link = Link.query.first()
+        if link:
+            return jsonify({
+                "test": "URL generation test",
+                "slug": link.short_url_slug,
+                "generated_url": link.get_short_url(),
+                "method_used": "get_short_url()",
+                "expected": f"https://connect-link.onrender.com/{link.short_url_slug}"
+            })
+        return jsonify({"error": "No links in database"}), 404
+    
     # Root-level redirect route for short URLs (must be after API blueprint registration)
     @app.route('/<string:slug>')
     def redirect_short_url(slug):
