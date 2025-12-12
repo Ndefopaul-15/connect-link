@@ -42,8 +42,8 @@ class Link(db.Model):
         """Return the full short URL with domain if available"""
         if self.domain:
             return f"https://{self.domain.domain_name}/{self.short_url_slug}"
-        # Default domain - ALWAYS use Render URL, no fallback to config
-        # This ensures we never use localhost
+        # Default domain - ALWAYS use Render URL
+        # This ensures we never use localhost in production
         default_domain = 'https://connect-link.onrender.com'
         return f"{default_domain}/{self.short_url_slug}"
     
