@@ -42,10 +42,8 @@ class Link(db.Model):
         """Return the full short URL with domain if available"""
         if self.domain:
             return f"https://{self.domain.domain_name}/{self.short_url_slug}"
-        # Default domain - ALWAYS use Render URL
-        # This ensures we never use localhost in production
-        default_domain = 'https://connect-link.onrender.com'
-        return f"{default_domain}/{self.short_url_slug}"
+        # PRODUCTION: Always use Render URL - never localhost
+        return f"https://connect-link.onrender.com/{self.short_url_slug}"
     
     def is_expired(self):
         """Check if the link has expired"""
