@@ -14,7 +14,7 @@ jwt = JWTManager()
 bcrypt = Bcrypt()
 
 def create_app(config_name='default'):
-    """Application factory function"""
+    """Application factory function for Connect Link API"""
     app = Flask(__name__)
     
     # Load configuration
